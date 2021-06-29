@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "148465752787",
+    "firebase_url": "https://birthdayapp-640f1-default-rtdb.firebaseio.com",
+    "project_id": "birthdayapp-640f1",
+    "storage_bucket": "birthdayapp-640f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148465752787:android:a8f9de335d6d73942c5226",
+        "android_client_info": {
+          "package_name": "com.birthdayfundapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148465752787-2h6ioadsi27748ivjnrai3qpi2krljmf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.birthdayfundapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "148465752787-ib67fd21316s6aukcej3fb79mc8ki7mk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw5y8UEI-LHYUiusdP6laP1zKfxuv9IYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148465752787-ib67fd21316s6aukcej3fb79mc8ki7mk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
