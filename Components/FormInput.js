@@ -4,7 +4,12 @@ import {windowHeight, windowWidth} from '../Dimen/Dimensions';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
+const FormInput = ({labelValue, placeholderText,iconType, ...rest}) => {
+
+  const handleChange=(e)=>{
+    console.log(e.value)
+    
+  }
   return (
     <View style={styles.inputContainer}>
       <View style={styles.iconStyle}>
@@ -16,6 +21,7 @@ const FormInput = ({labelValue, placeholderText, iconType, ...rest}) => {
         numberOfLines={1}
         placeholder={placeholderText}
         placeholderTextColor="#666"
+        
         {...rest}
       />
     </View>

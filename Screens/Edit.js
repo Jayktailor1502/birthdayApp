@@ -9,15 +9,14 @@ import FormInput from '../Components/FormInput';
 const Edit = ({ navigation, route }) => {
 
     const [fund, onChangeFund] = useState();
-    const { index } = route.params;
+    const { pkey, name } = route.params;
 
     const EditBtn = () => {
-        console.log('edit')
-        // database().ref(`Employees/Details/${index}/`).set({
-        //     Fund : fund
-        // });
-        const edit = database().ref(`Employees/Details/${index}/`);
-        edit.update({ Fund: fund });
+        // console.log('edit')
+        database().ref(`Employees/Details/${pkey}/`).set({
+            Fund: fund,
+            Name: name
+        });
         navigation.navigate("Fund's List")
     }
 
@@ -56,3 +55,21 @@ const styles = StyleSheet.create({
 })
 
 export default Edit
+ // const edit = database().ref(`Employees/Details/${index}/`);
+        // edit.update({ Fund: fund });
+        // navigation.navigate("Fund's List")
+        // var query = database().ref('Employees/Details/').orderByKey();
+        // query.once("value")
+        //     .then(function (snapshot) {
+        //         snapshot.forEach(function (childSnapshot) {
+        //             var pkey = childSnapshot.key;
+        //             console.log(childSnapshot.val().Name);
+        //             if (childSnapshot.val().Name == item.Name) {
+        //                 database().ref().child(`Employees/Details/${pkey}`).remove();
+        //                 console.log('run')
+        //                 console.log(pkey)
+        //                 console.log(index)
+        //                 return true;
+        //             }
+        //         });
+        //     });

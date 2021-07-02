@@ -16,31 +16,32 @@ const Add = ({ navigation }) => {
         if (data.Name !== '' && data.Fund !== '') {
             database().ref(`Employees/Details`)
                 .push(data);
-            console.log({ data })
+            // console.log(database.ref.push().key())
+            console.log(data)
             console.log('Data Pushed In useEffect')
         }
     }, [data])
 
-    const yesPressed=()=>{
-        setData({Name: '', Fund: ''})
+    const yesPressed = () => {
+        setData({ Name: '', Fund: '' })
         console.log('in yes pressed')
-        console.log({data})
+        console.log({ data })
         return;
     }
 
-    const timeFunction=()=>{
-         Alert.alert(
-                    "Alert ",
-                    "Want to add more?",
-                    [
-                      {
-                        text: "No",
-                        onPress: () => navigation.navigate("Fund's List"),
-                        style: "cancel"
-                      },
-                      { text: "Yes", onPress:()=> {yesPressed()} }
-                    ]
-                  );
+    const timeFunction = () => {
+        Alert.alert(
+            "Alert ",
+            "Want to add more?",
+            [
+                {
+                    text: "No",
+                    onPress: () => navigation.navigate("Fund's List"),
+                    style: "cancel"
+                },
+                { text: "Yes", onPress: () => { yesPressed() } }
+            ]
+        );
     }
 
     const AddBtn = () => {
@@ -54,12 +55,21 @@ const Add = ({ navigation }) => {
             // setTimeout(() => {
             //     timeFunction();
             //     }, 600);        
-            console.log('All Good')         
-            navigation.navigate("Fund's List")
+            console.log('All Good - in condition')
+            // navigation.navigate("Fund's List")
         }
         else {
             alert('Please enter data properly !!')
         }
+    }
+
+    const handleChange1 = (e) => {
+        console.log(e.nativeEvent.text)
+        onChangeText(e.nativeEvent.text)
+    }
+    const handleChange2 = (e) => {
+        console.log(e.nativeEvent.text)
+        onChangeFund(e.nativeEvent.text)
     }
 
     return (
@@ -87,6 +97,7 @@ const Add = ({ navigation }) => {
                     iconType="user"
                     autoCapitalize="none"
                     autoCorrect={false}
+                    onChange={handleChange1}
                 />
                 <FormInput
                     labelValue={fund}
@@ -96,6 +107,7 @@ const Add = ({ navigation }) => {
                     keyboardType="numeric"
                     autoCapitalize="none"
                     autoCorrect={false}
+                    onChange={handleChange2}
                 />
 
                 <FormButton
